@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore basic css</title>
+-->selector: id(#), class(.), element/tag,universal(*)for all,grouping(more the one like h1,p{color:blue}) & attribute(input or attribute style )
+<br>
+-->for all paragraph color
+<br>
+   <style>
+        #short{
+            color: rgba(70, 20, 195, 0.511);
+            text-align: center;
+        }
+        p{
+            background-color: rgb(134, 188, 170);
+            width: 50%;
+        }
+        li{
+            color: brown;
+            width: 50%;
+        }
+        h4{
+            background-color: rgb(134, 188, 170);
+            width: 50%;
+        }
+        #embedded{
+            font-size:58px;
+            font-weight: bolder;
+        }
+        #intro{
+            font-size:x-large;
+            font-weight: bold;
+        }
+        .player{
+            text-align: center;
+        }
+        
+    </style>
+</head>
+--> id is a attribute and used for specific one or unique
+<br>
+-->class symbol dot and used for some 
+<body>
+    <h3 style="color: blueviolet;">Learning basic CSS</h3>
+    <h4 style="background-color: aqua;">Inline CSS</h4>
+    <p>CSS meaning: cascading style sheet</p>
+    <p id="short">Style is colorful</p>
+    <p class="player">Short orm is CSS</p>
+    <p>Needs style rule and value separated by colon(:)</p>
+    <p>After each style you need to use semi:colon</p>
+    <ul>
+        <li id="intro">Inline</li>
+        <li id="embedded">Internal or embedded</li>
+        <li id="embedded">External</li>
+    </ul>
+</body>
+</html>
