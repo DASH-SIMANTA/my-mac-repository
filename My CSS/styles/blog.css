@@ -1,3 +1,16 @@
+.header{
+    height: 300px;
+    /* background-color: bisque ; */
+    background-image: url("cute-baby.jpeg");
+    /* background-image: url('../'); */
+    
+    /* background-repeat: no-repeat; */
+    /* background-repeat: repeat-y; */
+    /* background-size: cover; */
+    /* background-size: contain; */
+    background-size: 200px;
+}
+
 h3{
     font-size: 30px;
     text-decoration: overline;
