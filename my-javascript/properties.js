@@ -1,3 +1,4 @@
+//19_6
 const person= {
     name:'sodor ali',
     age:25,
