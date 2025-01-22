@@ -292,6 +292,66 @@ else{
 
 
 
+//19_3 String slice,join, concat and includes
+
+//slice
+//0,1,[2,3,4,5],6,7
+
+const address='andorkilla';
+const part = address.slice(2-5);
+console.log(part);
+
+const sententence = 'i am a good and hardworking person';
+// console.log(sententence.split())
+
+console.log(sententence.split('a'))
+
+
+const bondhus = 'rahim, tahim, dahim,fahim,kahim,bahim';
+const bondhu = bondhus.split(',');
+console.log(bondhu);
+const realFriend = ['rahim', 'tahim', 'dahim','fahim','kahim','bahim'];
+// console.log(realFriend);
+console.log(realFriend.join());
+console.log(realFriend.join('|'));
+console.log(realFriend.join('-'));
+
+
+//concat
+
+const first = 'Abid';
+const last = 'nabid';
+
+
+const fullname = first + ' '+ last;
+
+console.log(fullname);
+// const fullname2 = first.concat(last);
+const fullname2 = first.concat(' ').concat(last);
+console.log(fullname2);
+
+//includes
+//check if last name has d or not
+console.log(last.includes('d')); //true
+console.log(last.includes('x')); //false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
