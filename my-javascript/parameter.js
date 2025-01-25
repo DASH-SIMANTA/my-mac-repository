@@ -37,13 +37,10 @@ add(123,654);
  }
  addAll(1,2,3,4,5);
 
-
-
  function doubleIt(number){
     const doubled = number *2;
     console.log(number, doubled);
  }
-
 
  console.log('I will call the function');
  //doubleIt(argument);
@@ -52,7 +49,6 @@ add(123,654);
  doubleIt(9876);
  console.log('--------------');
  doubleIt(765);
-
 
  function difference(num1,num2){
     const diff=num1 - num2;

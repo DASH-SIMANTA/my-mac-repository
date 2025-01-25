@@ -9,7 +9,6 @@ function cutHalf(){
     return half;
 }
 tenTimes(5);
-
 const output = tenTimes(3);
 
 console.log('output', output);

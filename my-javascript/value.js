@@ -6,7 +6,6 @@ const person= {
     married: true,
     'fav places': ['bandarbon','saintmartin', 'kuakata']
 }
-
 //to update property value
 person.salary =30000;
 person['age'] =26;
