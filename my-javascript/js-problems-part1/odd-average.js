@@ -2,7 +2,6 @@
  * function takes an array as parameter
  * Give me the average of the odd number of the array
  */
-
 function oddAverage(numbers){
     const odds=[];
     for(const number of numbers){
