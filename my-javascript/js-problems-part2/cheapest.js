@@ -1,3 +1,4 @@
+//23_4
 const phones =[
     {name: 'samsung', price:100000, camera:'12mp', color:'black'},
     {name: 'Xaomi', price:100000, camera:'12mp', color:'black'},
