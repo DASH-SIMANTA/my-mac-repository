@@ -11,6 +11,5 @@ else if(tim >jim && tim >kim){
 else{
     console.log('kim is the kardasians boss');
 }
-
 const max = Math.max(12,34,334);
 console.log(max);
