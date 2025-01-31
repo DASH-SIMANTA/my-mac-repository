@@ -6,8 +6,14 @@
         <title>DOM-Document Object Model</title>
         <link rel="stylesheet" href="styles/styles.css">
         <style>
-            li{
-                color:yellowgreen;
+            .fruits-container li{
+                color:brown;
+            }
+            #fruits-title{
+                color: chocolate;
+            }
+            .important-places{
+                color:coral;
             }
         </style>
     </head>
@@ -16,16 +22,78 @@
             <h1>Welcome to my DOM</h1>
         </head>
         <main>
-            <h1>My Awesome dom de baba</h1>
+            <section class="fruits-container">
+                <h1>My Awesome dom de baba</h1>
+                <ul>
+                    
+                    <li>jalali set</li>
+                    <li>Bonobans</li>
+                    <li>safayet</li>
+                </ul>
+            </section>
+          <section>
             <ul>
-                <li>jalali set</li>
-                <li>Bonobans</li>
-                <li>safayet</li>
+                <h1 id="fruits-title">Fruits i like</h1>
+                <li>Apple</li>
+                <li>Malta</li>
+                <li>Banana</li>
             </ul>
+
+          </section>
+          <section>
+            <ul>
+                <h1>Places i like to visit</h1>
+                <li class="important-places">sundarban</li>
+                <li class="important-places">bandarban</li>
+                <li class="important-places">kataban</li>
+                <li>shalban</li>
+            </ul>
+          </section>
+            
         </main>
         <script src="JS/dom.js"></script>
         <script>
-            console.log('Adding js inside the html file')
+            // const student = {
+            //     name: 'abul',
+            //     id: 121,
+            //     study: function (time){
+            //         console.log(time,'study kore');
+            //     }
+            // }
+            // console.log('Adding js inside the html file')
+
+            //option-1: getElementsByTagName
+            const liCollection = document.getElementsByTagName('li');
+            // console.log(liCollection);
+            for(const li of liCollection){
+                // console.log(li.innerText);
+            }
+
+            const allHeadings = document.getElementsByTagName('h1');
+            for(const h1 of allHeadings){
+                // console.log(h1);
+                // console.log(h1.innerText);
+            }
+            //option-2: getElementById
+            const fruitsTitle = document.getElementById('fruits-title');
+            console.log(fruitsTitle)
+            fruitsTitle.innerText ='Fruits changes by js';
+            console.log(fruitsTitle.innerText);
+
+            //option-3: getElementByClassName
+            // const places = document.getElementsByClassName('important-places');
+
+            // for(const place of places){
+            //     console.log(place);
+            //     console.log(place.innerText);
+            // }
+            // option-4: querySelectorAll
+            //will get the first one
+            const someLi = document.querySelectorAll('.fruits-container li');
+            // console.log(someLi);
+            for(const li of someLi){
+                console.log(li.innerText);
+            }
         </script>
         
     </body>
