@@ -12,10 +12,10 @@ for(const section of sections){
 // // console.log(sections);
 // placesContainer.style.backgroundColor ='yellow';
 
-const placesContainer = document.getElementById('places-container');
+// const placesContainer = document.getElementById('places-container');
 // console.log(placesContainer)
 // placesContainer.classList.add('yellow-bg');
-placesContainer.classList.add('text-center');
+// placesContainer.classList.add('text-center');
 // placesContainer.classList.remove('large-text');
 
 

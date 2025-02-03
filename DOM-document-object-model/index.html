@@ -21,7 +21,7 @@
         <head>
             <h1>Welcome to my DOM</h1>
         </head>
-        <main>
+        <main id="main-container">
             <section class="fruits-container">
                 <h1>My Awesome dom de baba</h1>
                 <ul>
@@ -41,8 +41,8 @@
 
           </section>
           <section id="places-container" class="large-text">
-            <ul>
-                <h1>Places i like to visit</h1>
+            <ul id="places-list">
+                <h1>Places I like to visit</h1>
                 <li class="important-places">sundarban</li>
                 <li class="important-places">bandarban</li>
                 <li class="important-places">kataban</li>
@@ -52,6 +52,7 @@
             
         </main>
         <script src="JS/dom.js"></script>
+        <script src="JS/append.js"></script>
         <script src="JS/styleJs.js"></script>
         <script>
             // const student = {
@@ -77,9 +78,9 @@
             }
             //option-2: getElementById
             const fruitsTitle = document.getElementById('fruits-title');
-            console.log(fruitsTitle)
+            // console.log(fruitsTitle)
             fruitsTitle.innerText ='Fruits changes by js';
-            console.log(fruitsTitle.innerText);
+            // console.log(fruitsTitle.innerText);
 
             //option-3: getElementByClassName
             // const places = document.getElementsByClassName('important-places');
@@ -93,7 +94,7 @@
             const someLi = document.querySelectorAll('.fruits-container li');
             // console.log(someLi);
             for(const li of someLi){
-                console.log(li.innerText);
+                // console.log(li.innerText);
             }
         </script>
         
