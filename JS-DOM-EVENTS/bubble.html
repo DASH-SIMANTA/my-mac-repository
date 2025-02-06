@@ -1,0 +1,55 @@
+<!-- 26-7 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+    <style>
+        #item-2{
+            border: 2px solid purple;
+        }
+        ul{
+            border: 2px solid tomato;
+        }
+        body{
+            border: 2px solid greenyellow;
+        }
+        section{
+            border: 2px solid yellow;
+        }
+
+    </style>
+</head>
+<body id="body">
+
+    <h1>Exploring event Bubble</h1>
+    <section id="list-container">
+        <ul id="list-ul">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Adipisci, porro.</li>
+            <li id="item-3">Consectetur, fugit.</li>
+            <li id="item-4">Sunt, adipisci.</li>
+            <li id="item-5">At, reiciendis.</li>
+            <li id="item-6">Labore, itaque.</li>
+        </ul>
+    </section>
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(){
+            console.log('item-2 clicked');
+            //to stop bubble
+            event.stopPropagation();
+        });
+        document.getElementById('list-ul').addEventListener('click',function(){
+            console.log('ul clicked');
+        });
+        document.getElementById('list-container').addEventListener('click',function(){
+            console.log('section clicked');
+        });
+        document.getElementById('body').addEventListener('click',function(){
+            console.log('body clicked');
+        });
+    </script>
+    
+</body>
+</html>
