@@ -9,7 +9,6 @@ function makeRed(){
     document.body.style.backgroundColor='red';
 }
 
-
 //option-3
 const makeBlueButton =document.getElementById('make-blue');
 makeBlueButton.onclick = makeBlue ;
