@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payoo MFS function</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <main class="flex justify-center">
+        <div class="mockup-phone">
+            <div class="camera"></div>
+            <div class="display">
+              <div class="artboard artboard-demo phone-3">
+                <!-- account balance -->
+
+                <div class="stats shadow">
+                    <div class="stat">
+                      <div class="stat-title">Account Balance</div>
+                      <div class="stat-value">9,400</div>
+                      
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <!-- features start -->
+                  <div>
+                    <button style="background-color:DodgerBlue;" class="btn - btn-lg">Add Money</button>
+                    <button style="background-color:DodgerBlue;" class="btn - btn-lg">Cash Out</button>
+                  </div>
+                 <!-- features end -->
+
+                  <div class="divider"></div>
+                  <!-- add money form start -->
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Add Money Amount</span>
+                        </label>
+<!-- input add money-->
+                        <input id="input-add-money" type="text" placeholder="Add Amount" class="input input-bordered" autocomplete="off" required />
+
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin</span>
+                        </label>
+<!-- input pin -->
+                        <input id="input-pin-number" type="password" placeholder="Enter pin" class="input input-bordered" required />
+                       
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="btn-add-money" class="btn btn-primary ">Add money</button>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- add money form end -->
+                 
+              </div>
+            </div>
+          </div>
+    </main>
+    <script src="js/utilities.js"></script>
+    <script src="js/addMoney.js"></script>
+    
+</body>
+</html>
