@@ -18,21 +18,22 @@
                 <div class="stats shadow">
                     <div class="stat">
                       <div class="stat-title">Account Balance</div>
-                      <div class="stat-value">9,400</div>
+                      <div id="account-balance" class="stat-value">9400</div>
                       
                     </div>
                   </div>
                   <div class="divider"></div>
                   <!-- features start -->
                   <div>
-                    <button style="background-color:DodgerBlue;" class="btn - btn-lg">Add Money</button>
-                    <button style="background-color:DodgerBlue;" class="btn - btn-lg">Cash Out</button>
+                    <button id="show-add-money-form" style="background-color:DodgerBlue;" class="btn - btn-lg">Add Money</button>
+                    <button id="show-cash-out-form" style="background-color:DodgerBlue;" class="btn - btn-lg">Cash Out</button>
+                    <button id="show-transaction-form" style="background-color:DodgerBlue;" class="btn - btn-lg">Transactions</button>
                   </div>
                  <!-- features end -->
 
                   <div class="divider"></div>
                   <!-- add money form start -->
-                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                  <div id="add-money-form" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form class="card-body">
                       <div class="form-control">
                         <label class="label">
@@ -56,6 +57,43 @@
                     </form>
                   </div>
                   <!-- add money form end -->
+
+                   <!-- cash out form start -->
+                   <div id="cash-out-form" class=" hidden bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Cash Out Amount</span>
+                        </label>
+<!-- input cash out money-->
+                        <input id="input-cash-out" type="text" placeholder="Add Amount" class="input input-bordered" autocomplete="off" required />
+
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Pin</span>
+                        </label>
+<!-- input pin cash out-->
+                        <input id="input-cash-out-pin-number" type="password" placeholder="Enter pin" class="input input-bordered" required />
+                       
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="btn-cash-out" class="btn btn-primary ">Cash Out</button>
+                      </div>
+                    </form>
+                  </div>
+
+                   <!-- cash out form end -->
+                    <!-- Transaction start -->
+                     <div id="transaction-form" class="hidden">
+                        <h2 class="text-center">Transaction History</h2>
+                        <h2>
+                            <div id="transaction-container" class="space-y-3">
+
+                            </div>
+                        </h2>
+                     </div>
+                    <!-- Transaction end -->
                  
               </div>
             </div>
@@ -63,6 +101,8 @@
     </main>
     <script src="js/utilities.js"></script>
     <script src="js/addMoney.js"></script>
+    <script src="js/cashOut.js"></script>
+    <script src="js/features.js"></script>
     
 </body>
 </html>
