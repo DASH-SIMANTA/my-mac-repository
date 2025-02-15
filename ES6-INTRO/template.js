@@ -23,7 +23,6 @@ const email  = 'hi jhon \n' +
 
 console.log(email);
 
-
 const challenge = `ekhon february mash 
 sobai prem kore 
 ami code kori`

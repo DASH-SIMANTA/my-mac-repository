@@ -18,6 +18,7 @@ function fullName(fisrt, last =' '){
 function friends(numbs = []){
 
 }
+
 function person(human ={}){
 
 }

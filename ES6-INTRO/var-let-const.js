@@ -23,10 +23,8 @@ console.log(rich);
     class: 12
  }
 
-
  student.name = 'kokil konthi';
  console.log(student);
-
 
 
  //loop

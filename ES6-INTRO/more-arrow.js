@@ -14,9 +14,7 @@ console.log(third);
 
 const doubleIt = num => num * 2;
 
-
 // no parameter
-
 const getPI = () => math.PI;
 console.log(getPI());
 

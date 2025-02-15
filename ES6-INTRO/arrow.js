@@ -1,5 +1,3 @@
-
-
 //function declaration
 function add(a,b){
     const result = a + b;
@@ -14,8 +12,6 @@ function add2(a,b){
 }
 const sum2 = add2(5,90);
 //function expression
-
-
 const add3 = function(a, b){
     return a + b;
 } 
