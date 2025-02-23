@@ -5,7 +5,6 @@ const arrayMax = Math.max(...numbers);
 // console.log(...numbers);
 // console.log(arrayMax);
 
-
 //use spread operation to copy
 
 const nums = [4,5,67,6,22];

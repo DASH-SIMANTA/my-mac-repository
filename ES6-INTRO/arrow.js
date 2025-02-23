@@ -6,7 +6,6 @@ function add(a,b){
 
 const sum = add(5,90);
 
-
 function add2(a,b){
     return a + b;
 }

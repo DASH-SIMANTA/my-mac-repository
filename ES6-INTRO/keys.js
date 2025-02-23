@@ -5,6 +5,7 @@ const glass = {
     isCleaned: true
 };
 
+
 // console.log(glass);
 
 //all property name

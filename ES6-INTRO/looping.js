@@ -15,7 +15,6 @@ for( const char of nobab){
     // console.log(char);
 }
 
-
 //object
 
 const glass = {
