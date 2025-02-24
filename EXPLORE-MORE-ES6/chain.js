@@ -38,5 +38,4 @@ const user2 ={
         country: 'bangladesh'
     }
 }
-
 console.log(user2.address.street?.city)
