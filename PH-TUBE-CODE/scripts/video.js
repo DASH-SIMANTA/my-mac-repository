@@ -59,8 +59,26 @@ const loadCategoryVideos=(id)=>{
 // }
 
 const displayVideos =(videos) => {
+    
     const videoContainer = document.getElementById('videos');
     videoContainer.innerHTML="";
+    if(videos.length == 0){
+        videoContainer.classList.remove("grid")
+        videoContainer.innerHTML = 
+        `
+        <div class="min-h-[200] flex flex-col gap-5 justify-center items-center">
+          <img src="assets/icon.png">
+        </div>
+        <h2 class="text-center text-xl font-bold">
+        No content Here in This Category
+        </h2>
+        
+        `;
+        return;
+    }
+    else{
+        videoContainer.classList.add("grid");
+    }
     
     videos.forEach((video) => {
     console.log(video);
