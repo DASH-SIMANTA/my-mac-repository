@@ -25,10 +25,19 @@ const loadVideos = () =>{
     // fetch the data
     fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
     .then(res =>res.json())
-    .then(data =>DisplayVideos(data.videos))
+    .then(data =>displayVideos(data.videos))
     .catch(error=> console.log(error));
 
 };
+const loadCategoryVideos=(id)=>{
+    // alert(id);
+     // fetch the data
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/category/${id}`)
+    .then(res =>res.json())
+    .then(data =>displayVideos(data.category))
+    .catch(error=> console.log(error));
+
+}
 
 // const cardDemo ={
 //     "category_id": "1001",
@@ -49,8 +58,9 @@ const loadVideos = () =>{
 //     "description": "Dive into the rhythm of 'Shape of You,' a captivating track that blends pop sensibilities with vibrant beats. Created by Olivia Mitchell, this song has already gained 100K views since its release. With its infectious melody and heartfelt lyrics, 'Shape of You' is perfect for fans looking for an uplifting musical experience. Let the music take over as Olivia's vocal prowess and unique style create a memorable listening journey."
 // }
 
-const DisplayVideos =(videos) => {
+const displayVideos =(videos) => {
     const videoContainer = document.getElementById('videos');
+    videoContainer.innerHTML="";
     
     videos.forEach((video) => {
     console.log(video);
@@ -58,13 +68,13 @@ const DisplayVideos =(videos) => {
     card.classList='card bg-base-100 w-96 shadow-sm'
     card.innerHTML=
     `
-     <figure class="h-[200px]">
+  <figure class="h-[200px]">
     <img
       src= ${video.thumbnail}
       class="h-full w-full object-cover"
       alt="Shoes"
       />
-      ${video.others.posted_date?.length == 0 ? "" :`<span class="absolute right-2 bottom-2 bg-black text-white rounded">${getTimeString(video.others.posted_date)}</span>`}
+      ${video.others.posted_date?.length == 0 ? "" :`<span class="absolute text-xs right-2 bottom-17 bg-black text-white rounded p-1 ">${getTimeString(video.others.posted_date)}</span>`}
       
   </figure>
   <div class="px-0 py-2 flex gap2">
@@ -102,14 +112,23 @@ const DisplayCategories = (categories) =>{
     categories.forEach((item)=>{
         console.log(item);
         //create a button
-        const button =document.createElement('button');
-        button.classList = 'btn';
-        button.innerText = item.category;
-
+        // const button =document.createElement('button');
+        // button.classList = 'btn';
+        // button.innerText = item.category;
+        // button.onclick =() => {
+        //     alert('hello');
+        // };
+        const buttonContainer =document.createElement('div');
+        buttonContainer.innerHTML=
+        `
+        <button onclick="loadCategoryVideos(${item.category_id})" class="btn">
+        ${item.category}
+        </button>
+        
+        `
         //add button to category container
-        categoryContainer.append(button);
-
-    })
+        categoryContainer.append(buttonContainer);
+    });
 };
 
 
