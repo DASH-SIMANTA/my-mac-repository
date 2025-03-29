@@ -29,9 +29,9 @@ const loadCategories = () =>{
     .catch(error=> console.log(error))
 
 };
-const loadVideos = () =>{
+const loadVideos = (searchText="") =>{
     // fetch the data
-    fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${searchText}`)
     .then(res =>res.json())
     .then(data =>displayVideos(data.videos))
     .catch(error=> console.log(error));
@@ -51,6 +51,29 @@ const loadCategoryVideos=(id)=>{
         displayVideos(data.category);
     })
     .catch(error=> console.log(error));
+
+}
+const loadDetails =async(videoId)=>{
+    // console.log(videoId);
+    const uri=`https://openapi.programming-hero.com/api/phero-tube/video/${videoId}`
+    const res =await fetch(uri);
+    const data =await res.json();
+    // console.log(data);
+    displayDetails(data.video)
+}
+const displayDetails=(video)=>{
+    // console.log(video);
+    const detailContainer = document.getElementById('modal-content');
+    detailContainer.innerHTML=`
+    <img src="${video.thumbnail}"/>
+    <p>${video.description}</p>
+    
+    `
+    // way1
+    // document.getElementById('showModalData').click();
+
+    //way-2
+    document.getElementById('customModal').showModal();
 
 }
 
@@ -82,7 +105,7 @@ const displayVideos =(videos) => {
         videoContainer.innerHTML = 
         `
         <div class="min-h-[200] flex flex-col gap-5 justify-center items-center">
-          <img src="assets/icon.png">
+          <img src="assets/icon.png"/>
         </div>
         <h2 class="text-center text-xl font-bold">
         No content Here in This Category
@@ -112,21 +135,23 @@ const displayVideos =(videos) => {
   </figure>
   <div class="px-0 py-2 flex gap2">
     <div>
-        <img class="w-10 h-10 rounded-full object-cover" src=${video.authors[0].profile_picture}>
+        <img class="w-10 h-10 rounded-full object-cover" src=${video.authors[0].profile_picture}/>
     </div>
     <div>
         <h2 class="font-bold" >${video.title}</h2>
         <div class="flex items-center gap-2">
             <p class="text-gray-400">${video.authors[0].profile_name}</p>
-            ${video.authors[0].verified ===true ? '  <img class="w-5 " src="https://img.icons8.com/?size=96&id=D9RtvkuOe31p&format=png">' : ''}
+            ${video.authors[0].verified ===true ? '  <img class="w-5 " src="https://img.icons8.com/?size=96&id=D9RtvkuOe31p&format=png"/>' : ''}
         </div>
         
-        <p></p>
+        <p>
+        <button onclick="loadDetails('${video.video_id}')" class="btn btn-sm btn-error">details</button>
+        </p>
     </div>
   
   </div>
     
-    `
+    `;
     videoContainer.append(card);
 
     });
@@ -164,6 +189,9 @@ const DisplayCategories = (categories) =>{
     });
 };
 
+document.getElementById('search-input').addEventListener("keyup",(event)=>{
+    loadVideos(event.target.value);
+});
 
 loadCategories();
 loadVideos();
