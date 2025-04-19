@@ -43,4 +43,6 @@ const student = {
 const myVariable = 'age';
 console.log(student.age); //direct by property
 console.log(student['age']);//access via property name string
-console.log(student[myVariable])
+console.log(student[myVariable]);
+
+
