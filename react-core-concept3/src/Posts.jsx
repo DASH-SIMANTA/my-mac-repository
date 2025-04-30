@@ -15,10 +15,7 @@ export default function Posts(){
             <h3>post:{posts.length} </h3>
             {
                 posts.map(post => <Post post={post}></Post>)
-            }
-            
-           
-            
+            }                     
         </div>
     )
 }

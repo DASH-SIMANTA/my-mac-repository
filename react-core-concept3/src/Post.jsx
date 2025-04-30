@@ -9,7 +9,6 @@ export default function Post({post}){
             <p><small>userId:{userId}</small></p>
             <p><small>postId:{id}</small></p>
             <p>{body}</p>
-
         </div>
     )
 

@@ -9,7 +9,6 @@ function App() {
 
   return (
     <>
-      
       <h1>React Core Concepts Recap</h1>
       <ol>
         <li>Components</li>
