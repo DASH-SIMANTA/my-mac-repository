@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './Country.css';
+import CountryDetail from '../CountryDetail/countryDetail';
+
 const Country =({country,handleVisitedCountry,handleVisitedFlags})=>{
     console.log(handleVisitedCountry);
     const {name,flags,population,area,cca3} =country;
@@ -25,6 +27,13 @@ const Country =({country,handleVisitedCountry,handleVisitedFlags})=>{
             
             {/* {visited && 'I have visited this country'} */}
             {visited ?'I have visited this country.' : 'I wand to visit.'}
+            <hr />
+            <CountryDetail 
+            country={country}>
+            handleVisitedCountry={handleVisitedCountry}
+            handleVisitedFlags={handleVisitedFlags}
+
+            </CountryDetail>
 
         </div>
     )
