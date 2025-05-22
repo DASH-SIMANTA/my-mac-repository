@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "cover": "https://picsum.photos/seed/article1/600/400",
+    "title": "Exploring the Depths of TypeScript",
+    "author": "Emily Carter",
+    "author_img": "https://randomuser.me/api/portraits/women/68.jpg",
+    "posted_date": "2025-05-01",
+    "reading_time": 7,
+    "hashtags": ["#TypeScript", "#JavaScript", "#Programming"]
+  },
+  {
+    "id": 2,
+    "cover": "https://picsum.photos/seed/article2/600/400",
+    "title": "Building Scalable APIs with Node.js",
+    "author": "Ryan Mitchell",
+    "author_img": "https://randomuser.me/api/portraits/men/34.jpg",
+    "posted_date": "2025-04-25",
+    "reading_time": 6,
+    "hashtags": ["#NodeJS", "#Backend", "#API"]
+  },
+  {
+    "id": 3,
+    "cover": "https://picsum.photos/seed/article3/600/400",
+    "title": "Designing Intuitive Interfaces with Figma",
+    "author": "Sophia Nguyen",
+    "author_img": "https://randomuser.me/api/portraits/women/52.jpg",
+    "posted_date": "2025-03-30",
+    "reading_time": 5,
+    "hashtags": ["#Figma", "#UIUX", "#Design"]
+  },
+  {
+    "id": 4,
+    "cover": "https://picsum.photos/seed/article4/600/400",
+    "title": "State Management in Modern React",
+    "author": "Liam Brooks",
+    "author_img": "https://randomuser.me/api/portraits/men/19.jpg",
+    "posted_date": "2025-05-12",
+    "reading_time": 8,
+    "hashtags": ["#React", "#StateManagement", "#Frontend"]
+  },
+  {
+    "id": 5,
+    "cover": "https://picsum.photos/seed/article5/600/400",
+    "title": "Mastering CSS Grid in 2025",
+    "author": "Isabella Martinez",
+    "author_img": "https://randomuser.me/api/portraits/women/21.jpg",
+    "posted_date": "2025-04-18",
+    "reading_time": 6,
+    "hashtags": ["#CSSGrid", "#ResponsiveDesign", "#WebDevelopment"]
+  }
+]
