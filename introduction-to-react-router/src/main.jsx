@@ -12,6 +12,8 @@ import {
 } from "react-router-dom";
 import Users from './component/Users/users.jsx';
 import UserDetails from './component/UserDetails/UserDetails.jsx';
+import Posts from './component/Posts/Posts.jsx';
+import PostDetails from './component/PostDetails/PostDetails.jsx';
 
 
 
@@ -45,6 +47,18 @@ const router = createBrowserRouter([
         // The fetched data will be available in the component rendered by this route.
         // The UserDetails component will use this data to display the user's details.    
         element: <UserDetails></UserDetails>
+      },
+      {
+        path: '/posts',
+        // This route is for displaying posts, but it currently has no element associated with it.
+        // You can add a component to render posts in the future.
+        loader: () => fetch('https://jsonplaceholder.typicode.com/posts'),
+        element: <Posts></Posts>
+      },
+      {
+        path: '/post/:postId',
+        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
+        element: <PostDetails></PostDetails>
       }
     
     ],
