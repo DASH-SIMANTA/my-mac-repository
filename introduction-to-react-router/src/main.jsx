@@ -14,6 +14,7 @@ import Users from './component/Users/users.jsx';
 import UserDetails from './component/UserDetails/UserDetails.jsx';
 import Posts from './component/Posts/Posts.jsx';
 import PostDetails from './component/PostDetails/PostDetails.jsx';
+import ErrorPage from './component/ErrorPage/ErrorPage.jsx';
 
 
 
@@ -21,6 +22,12 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home></Home>,
+    errorElement: <ErrorPage></ErrorPage>,
+    // The errorElement is used to display an error page if any of the routes fail to load or if there is an error in the application.
+    // This is useful for handling errors gracefully and providing a user-friendly message when something goes wrong.
+    // The ErrorPage component will be rendered when an error occurs in any of the routes defined in this router.
+    // It can be used to display a custom error message or provide navigation options to the user.
+    // This helps improve the user experience by showing a meaningful error page instead of a blank screen or an unhandled error.   
     children: [
       {
           path: '/about',
