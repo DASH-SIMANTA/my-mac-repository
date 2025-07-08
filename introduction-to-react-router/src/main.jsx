@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import Home from './component/Home/Home.jsx';
-import Header from './component/Header/Header.jsx';
+// import Header from './component/Header/Header.jsx';
 import About from './component/About/About.jsx';
 import Contact from './component/Contact/Contact.jsx';
 import {
@@ -75,6 +75,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} fallbackElement={<p>Loading...</p>} />
+    <RouterProvider 
+    router={router}
+      fallbackElement={<p>Loading...</p>}
+     />
   </StrictMode>,
 )
