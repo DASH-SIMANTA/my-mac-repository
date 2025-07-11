@@ -9,12 +9,7 @@ const HookForm = () => {
     const handleSubmit = e => {
         // console.log('form data',name);
         console.log('form data',nameState.value);
-        e.preventDefault();
-       
-        // console.log(e.target.name.value);
-        // console.log(e.target.email.value);
-        // console.log(e.target.phone.value);
-        // console.log("Form submitted");
+        e.preventDefault();    
     };  
     return (
         <div>
