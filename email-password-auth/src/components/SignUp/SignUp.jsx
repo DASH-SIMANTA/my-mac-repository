@@ -1,7 +1,8 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { auth } from "../../firebase.init";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,7 +21,7 @@ const SignUp = () => {
         // reset error and status
         setErrorMessage('');
         setSuccess(false);
-        if(!terms){
+        if (!terms) {
             setErrorMessage('Please accept our terms and condition.');
             return;
         }
@@ -37,15 +38,21 @@ const SignUp = () => {
 
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                // console.log(result.user);
                 setSuccess(true);
-
+                sendEmailVerification(result.user)
+                    .then(() => {
+                        console.log('Verification email sent');
+                    })
+                    .catch(err => {
+                        console.error("Email verification failed:", err.message);
+                        setErrorMessage("Could not send verification email.");
+                    });
             })
             .catch(error => {
-                // console.log('ERROR', error.message);
                 setErrorMessage(error.message);
                 setSuccess(false);
-            })
+            });
+
 
     }
     return (
@@ -75,7 +82,7 @@ const SignUp = () => {
                                 <div><a className="link link-hover">Forgot password?</a></div>
                                 <div>
                                     <fieldset className="fieldset bg-base-100 border-base-300 rounded-box w-64 border p-4">
-                                   
+
                                         <label className="label">
                                             <input type="checkbox" className="checkbox" name='terms' />
                                             Accept Terms and Conditions.
@@ -83,7 +90,7 @@ const SignUp = () => {
                                     </fieldset>
                                 </div>
 
-                                <button className="btn btn-neutral mt-4">Login</button>
+                                <button className="btn btn-neutral mt-4">Sign Up</button>
                             </div>
                         </fieldset>
                     </div>
@@ -93,6 +100,9 @@ const SignUp = () => {
             {
                 success && <p className="text-green-600">Sign up is successful.</p>
             }
+            <p className="m-2">
+                Already have an account? Please <Link to='/login'>Login</Link>
+            </p>
         </div>
     );
 };

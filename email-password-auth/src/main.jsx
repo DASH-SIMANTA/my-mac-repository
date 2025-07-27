@@ -9,7 +9,8 @@ import Main from './layout/Main';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import SignUp from './components/SignUp/SignUp';
+import SignUp from './components/SignUp/SignUP';
+
 const router = createBrowserRouter([
   {
     path: "/",
