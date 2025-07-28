@@ -4,28 +4,34 @@ import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
     // const authInfo = useContext(AuthContext);
-//or
-    const {user,signOutUser} = useContext(AuthContext);
+    //or
+    const { user, signOutUser } = useContext(AuthContext);
     // console.log(authInfo);
     console.log(user);
-    const handleSignOut =() =>{
+    const handleSignOut = () => {
         signOutUser()
-        .then(()=>{
-            console.log('User sign out successfully');
-        })
-        .catch(error =>{
-            console.log('error', error.message);
-        })
+            .then(() => {
+                console.log('User sign out successfully');
+            })
+            .catch(error => {
+                console.log('error', error.message);
+            })
     }
 
 
     const links = <>
-         <li><NavLink to='/'>Home</NavLink></li>                     
-         <li><NavLink to='signUp'>Sign up</NavLink></li>                     
-         <li><NavLink to='login'>Log in</NavLink></li>                     
-         
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='signUp'>Sign up</NavLink></li>
+        <li><NavLink to='login'>Log in</NavLink></li>
+        {
+            user &&
+            <>
+                <li><NavLink to='orders'>Orders</NavLink></li>
+            </>
+        }
+
     </>
-    
+
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -43,18 +49,18 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                   {links}
+                    {links}
                 </ul>
             </div>
             <div className="navbar-end">
                 {
-                    user ? 
-                    <>
-                    <span>{user.email}</span>
-                    <a onClick={handleSignOut} className="btn">Sign Out</a>
-                    </>
-                    : 
-                    <Link to='/login'>Login</Link>
+                    user ?
+                        <>
+                            <span>{user.email}</span>
+                            <a onClick={handleSignOut} className="btn">Sign Out</a>
+                        </>
+                        :
+                        <Link to='/login'>Login</Link>
                 }
 
             </div>
