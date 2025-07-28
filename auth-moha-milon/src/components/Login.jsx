@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 
 const Login = () => {
-    const {signInUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -13,22 +14,32 @@ const Login = () => {
 
 
         signInUser(email, password)
-        .then(result => {
-            console.log(result.user);
-        })
-        .catch(error => {
-            console.log('error', error.message);
-        })
+            .then(result => {
+                console.log(result.user);
+                e.target.reset();
+                navigate('/')
+            })
+            .catch(error => {
+                console.log('error', error.message);
+            })
 
     }
+     const handleGoogleSignIn =()=>{
+        signInWithGoogle()
+        .then(result=>{
+            console.log(result.user);
+            navigate('/');
+        })
+        .catch(error => {console.log('ERROR', error.message)})
+     }
 
-    
+
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
-                    
+
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleLogin} className="card-body">
@@ -53,6 +64,9 @@ const Login = () => {
                     </form>
                     <p className='ml-4 mb-4 mr-4'>
                         New to this website? please <Link to='/signUp'>Sign up</Link>
+                    </p>
+                    <p>
+                        <button onClick={handleGoogleSignIn} className='btn-ghost'>Google</button>
                     </p>
                 </div>
             </div>
